@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Giảng của Thầy Lâm: Dạng 1 - Cân Bằng Nhiệt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .gradient-text-main {
+            background: linear-gradient(to right, #f97316, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ai-response-container::-webkit-scrollbar,
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        .ai-response-container::-webkit-scrollbar-track,
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .ai-response-container::-webkit-scrollbar-thumb,
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .ai-response-container::-webkit-scrollbar-thumb:hover,
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .modal {
+            animation: fadeInModal 0.3s ease-out;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text-main">Vật Lý Diệu Kỳ cùng Thầy Lâm</h1>
+            <p class="text-gray-600 mt-2 text-lg">Chuyên đề: Dạng 1 - Bài toán Cân Bằng Nhiệt</p>
+        </header>
+
+        <!-- Tab Content Container -->
+        <div>
+            <!-- Tab 1: Dạng 1 - Cân Bằng Nhiệt -->
+            <div id="tab1" style="display: block;">
+                <div class="bg-gradient-to-br from-amber-50 via-white to-sky-100 p-6 rounded-2xl shadow-lg">
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-inner xl:col-span-2">
+                            <h2 class="text-2xl font-bold text-blue-600 mb-4">Dạng 1: Bài Toán "San Sẻ" Thuần Túy</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                Chào các em, đây là dạng bài tập cơ bản nhất, giống như câu chuyện "san sẻ kẹo". Dạng này chỉ tập trung vào sự trao đổi nhiệt để làm thay đổi nhiệt độ, chứ <strong>không có sự thay đổi về trạng thái</strong>. "Vũ khí" bí mật ở đây là <strong>Phương trình Cân bằng nhiệt</strong>:
+                                <strong class="text-center block my-2 text-lg text-rose-600">Q<sub>tỏa ra</sub> = Q<sub>thu vào</sub></strong>
+                                Chỉ cần các em nắm vững công thức <strong class="text-gray-800">Q = m &middot; c &middot; &Delta;t</strong> là có thể giải quyết được!
+                            </p>
+                        </div>
+
+                        <!-- Download Button Added Here -->
+                        <div class="xl:col-span-2 text-center -my-2">
+                            <a href="https://drive.google.com/file/d/1mJPlDUNz_37MWuj43NnI3e6w6PSEgw-f/view" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-700 transition-transform transform hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"></path>
+                                </svg>
+                                Tải File PDF Bài Giảng
+                            </a>
+                        </div>
+                        
+                        <div class="xl:col-span-2 bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-inner">
+                            <h3 class="text-2xl font-bold text-blue-800 mb-4 text-center">Phân Tích Sâu Các Bài Tập Tiêu Biểu</h3>
+                            <div class="space-y-8 mt-6">
+                               <div class="p-6 bg-blue-50 border-2 border-blue-200 rounded-xl shadow-md">
+                                    <h4 class="font-bold text-xl text-blue-700 mb-3">1. Xác định nhiệt độ lò nung bằng nhiệt lượng kế</h4>
+                                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                                        <video src="https://i.imgur.com/hAA6T0G.mp4" autoplay="" loop="" muted="" playsinline="" class="w-48 h-48 object-contain rounded-lg bg-black p-1 shadow"></video>
+                                        <div class="flex-1">
+                                            <p class="text-gray-700"><strong>Bản chất:</strong> Đây là một vụ án của "thám tử nhiệt lượng". Ta có một miếng kim loại nóng bỏng nhưng không rõ nhiệt độ. Để "phá án", ta thả nó vào một cốc nước mát. Toàn bộ nhiệt lượng mà miếng kim loại "tỏa ra" đã được nước và cốc "thu vào" hết. Bằng cách đo sự thay đổi nhiệt độ của nước, ta có thể suy luận ngược lại nhiệt độ ban đầu của miếng kim loại. Về cơ bản, ta đang giải một phương trình với một ẩn số. Ta biết nhiệt lượng mà nước và cốc thu vào (vì ta đo được độ tăng nhiệt độ của chúng), và theo định luật bảo toàn năng lượng, nhiệt lượng này phải bằng nhiệt lượng miếng kim loại tỏa ra. Từ đó, ta có thể tìm ra nhiệt độ ban đầu chưa biết của miếng kim loại.</p>
+                                            <button onclick="openModal('problem1Modal')" class="mt-4 px-5 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition">Xem bài toán ví dụ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-green-50 border-2 border-green-200 rounded-xl shadow-md">
+                                    <h4 class="font-bold text-xl text-green-700 mb-3">2. Đo nhiệt dung riêng bằng bộ thí nghiệm điện</h4>
+                                     <div class="flex flex-col md:flex-row gap-6 items-center">
+                                        <video src="https://i.imgur.com/NIJH7wN.mp4" autoplay="" loop="" muted="" playsinline="" class="w-48 h-48 object-contain rounded-lg bg-black p-1 shadow"></video>
+                                        <div class="flex-1">
+                                            <p class="text-gray-700"><strong>Bản chất:</strong> Ta "cho nước ăn năng lượng" từ một nguồn điện. Nguồn điện này giống như một người đầu bếp chính xác, cung cấp một lượng năng lượng (nhiệt lượng Q) có thể tính toán được thông qua công suất (P) và thời gian (t). Nhiệm vụ của ta là quan sát xem "thực khách" (nước) phản ứng thế nào. Bằng cách đo xem với một lượng năng lượng cung cấp, nhiệt độ của một khối lượng nước đã biết tăng lên bao nhiêu, ta có thể tìm ra "khả năng ăn nhiệt" hay "sức ăn" đặc trưng của nó, đó chính là nhiệt dung riêng (c). Đây là bài toán khám phá một thuộc tính nội tại của vật chất.</p>
+                                             <button onclick="openModal('problem2Modal')" class="mt-4 px-5 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Xem bài toán ví dụ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-amber-50 border-2 border-amber-200 rounded-xl shadow-md">
+                                    <h4 class="font-bold text-xl text-amber-700 mb-3">3. Hoạt động của máy làm nóng nước bằng điện</h4>
+                                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                                        <img src="https://i.imgur.com/2qx3MI7.gif" alt="Sơ đồ nguyên lý máy làm nóng nước" class="w-48 h-auto object-contain rounded-lg bg-white p-2 shadow" onerror="this.onerror=null;this.src='https://placehold.co/192x192/fffbeb/d97706?text=Binh+Nong+Lanh';">
+                                        <div class="flex-1">
+                                            <p class="text-gray-700"><strong>Bản chất:</strong> Đây là một quá trình truyền nhiệt một chiều và có chủ đích từ nguồn điện sang nước. Nó là một ứng dụng thực tế của dạng bài số 2, nhưng mục tiêu đã thay đổi. Thay vì tìm "sức ăn" (nhiệt dung riêng) của nước, ta đã biết nó rồi. Bây giờ, mục tiêu là tính toán xem cần "cho ăn" trong bao lâu (thời gian) để nước đạt được độ "no" (nhiệt độ) mong muốn, hoặc tính xem đã "tốn bao nhiêu thức ăn" (điện năng tiêu thụ) cho cả quá trình. Đây là bài toán ứng dụng, tối ưu hóa quá trình.</p>
+                                            <button onclick="openModal('problem3Modal')" class="mt-4 px-5 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 transition">Xem bài toán ví dụ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-purple-50 border-2 border-purple-200 rounded-xl shadow-md">
+                                    <h4 class="font-bold text-xl text-purple-700 mb-3">4. Hoạt động của hệ thống tản nhiệt CPU bằng chất lỏng</h4>
+                                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                                        <img src="https://i.imgur.com/ak4xsxp.gif" alt="Sơ đồ tản nhiệt CPU bằng chất lỏng" class="w-48 h-auto object-contain rounded-lg bg-white p-2 shadow" onerror="this.onerror=null;this.src='https://placehold.co/192x192/f5f3ff/7c3aed?text=Tan+Nhiet+CPU';">
+                                        <div class="flex-1">
+                                            <p class="text-gray-700"><strong>Bản chất:</strong> Một dịch vụ "shipper nhiệt lượng" liên tục và hiệu quả cao. Chất lỏng (shipper) có nhiệt dung riêng cao, tức là nó có thể "gói" được rất nhiều nhiệt mà bản thân không bị nóng lên quá nhiều. Nó chạy đến CPU (kho hàng nóng) để "nhận" nhiệt, rồi nhanh chóng mang đến bộ tản nhiệt (trạm trung chuyển). Tại đây, quạt gió sẽ làm tăng tốc độ "giao hàng", tức là tăng tốc độ truyền nhiệt từ chất lỏng ra không khí. Đây là một chu trình truyền nhiệt cưỡng bức, mục tiêu là giữ cho "kho hàng" CPU luôn mát mẻ để hoạt động tối ưu.</p>
+                                            <button onclick="openModal('problem4Modal')" class="mt-4 px-5 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 transition">Xem bài toán ví dụ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-yellow-50 border-2 border-yellow-200 rounded-xl shadow-md">
+                                    <h4 class="font-bold text-xl text-yellow-700 mb-3">5. Máy làm nóng nước bằng năng lượng mặt trời</h4>
+                                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                                        <img src="https://i.imgur.com/pJnW5w8.jpeg" alt="Sơ đồ máy nước nóng năng lượng mặt trời" class="w-48 h-auto object-contain rounded-lg bg-white p-2 shadow" onerror="this.onerror=null;this.src='https://placehold.co/192x192/fefce8/ca8a04?text=Nang+Luong+Mat+Troi';">
+                                        <div class="flex-1">
+                                            <p class="text-gray-700"><strong>Bản chất:</strong> "Tắm nắng để đun nước". Thay vì dùng điện, chúng ta tận dụng năng lượng từ mặt trời. Bộ phận thu nhiệt "bắt lấy" ánh nắng, chuyển hóa quang năng thành nhiệt năng và "truyền" cho nước. Điểm cốt lõi ở đây là sự chuyển hóa năng lượng và khái niệm hiệu suất. Không phải 100% năng lượng mặt trời chiếu vào đều biến thành nhiệt làm nóng nước. Một phần sẽ bị phản xạ hoặc làm nóng các bộ phận khác. Bài toán này dạy chúng ta về việc tối ưu hóa sự hấp thụ và giảm thiểu sự mất mát năng lượng trong thực tế.</p>
+                                             <button onclick="openModal('problem5Modal')" class="mt-4 px-5 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition">Xem bài toán ví dụ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:col-span-2 bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-inner mt-8">
+                            <h3 class="text-xl font-bold text-blue-600 mb-4">Góc Tương Tác Cùng Thầy Lâm</h3>
+                            <div id="ai-interaction-1"><textarea id="ai-prompt-1" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 transition" rows="3" placeholder="Các em có thắc mắc gì về dạng bài toán cân bằng nhiệt này không?"></textarea><button onclick="askAI()" class="mt-2 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition flex items-center justify-center"><span id="ai-btn-text-1">Gửi câu hỏi</span><svg id="ai-loader-1" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></button><div id="ai-response-1" class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200 text-gray-800 hidden max-h-60 overflow-y-auto ai-response-container"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Problem 1 -->
+    <div id="problem1Modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-blue-700">Bài toán ví dụ: Vụ án Lò Nung Bí Ẩn</h3>
+                <button onclick="closeModal('problem1Modal')" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto modal-body">
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg">Đề bài:</h4>
+                    <p class="text-gray-700 mt-2">
+                        Một người thợ xác định nhiệt độ của một lò nung bằng cách đưa vào trong lò một miếng sắt có khối lượng 50g. Coi thời gian nung là đủ dài để miếng sắt có nhiệt độ bằng nhiệt độ lò nung. Khi đó, người thợ lấy miếng sắt ra và thả nó vào trong một nhiệt lượng kế có vỏ bằng thép khối lượng 150g chứa 0,7 lít nước ở 20°C. Khi cân bằng nhiệt, nhiệt độ của nước tăng lên 26°C. Biết nhiệt dung riêng của sắt và thép là 460 J/(kg.K), của nước là 4180 J/(kg.K); khối lượng riêng của nước là 1000 kg/m³. Bỏ qua sự truyền nhiệt ra môi trường. Hãy xác định nhiệt độ của lò.
+                    </p>
+                </div>
+                <hr class="my-4">
+                <button id="toggleSolutionBtn1" onclick="toggleSolution('solutionDiv1', 'toggleSolutionBtn1')" class="mb-4 w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Hiện đáp án</button>
+                <div id="solutionDiv1" class="hidden">
+                    <h4 class="font-bold text-lg">Phân tích và lời giải của Thầy Lâm:</h4>
+                    <p class="text-gray-700 mt-2">Chào các "thám tử", chúng ta cùng nhau phá án nhé!</p>
+                    <ol class="list-decimal list-inside space-y-2 mt-2 text-gray-700">
+                        <li><strong>Tóm tắt các "manh mối":</strong>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Miếng sắt (tỏa nhiệt): m<sub>sắt</sub> = 50g = 0.05kg, c<sub>sắt</sub> = 460 J/(kg.K), nhiệt độ đầu t<sub>1</sub> = ?</li>
+                                <li>Nước (thu nhiệt): V<sub>nước</sub> = 0.7l ➜ m<sub>nước</sub> = 0.7kg, c<sub>nước</sub> = 4180 J/(kg.K), nhiệt độ đầu t<sub>2</sub> = 20°C.</li>
+                                <li>Nhiệt lượng kế thép (thu nhiệt): m<sub>thép</sub> = 150g = 0.15kg, c<sub>thép</sub> = 460 J/(kg.K), nhiệt độ đầu t<sub>2</sub> = 20°C.</li>
+                                <li>Nhiệt độ cân bằng: t = 26°C.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tính nhiệt lượng "bên thu" đã nhận được:</strong>
+                            <p class="text-sm">Bên thu gồm có nước và nhiệt lượng kế. Chúng cùng nóng lên từ 20°C đến 26°C.</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>thu (nước)</sub> = m<sub>nước</sub> &middot; c<sub>nước</sub> &middot; (t - t<sub>2</sub>) = 0.7 &middot; 4180 &middot; (26 - 20) = 17556 J</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>thu (thép)</sub> = m<sub>thép</sub> &middot; c<sub>thép</sub> &middot; (t - t<sub>2</sub>) = 0.15 &middot; 460 &middot; (26 - 20) = 414 J</p>
+                            <p class="mt-1 font-mono text-sm bg-blue-100 p-2 rounded"><strong>Q<sub>thu (tổng)</sub> = 17556 + 414 = 17970 J</strong></p>
+                        </li>
+                        <li><strong>Thiết lập phương trình cho "bên tỏa":</strong>
+                            <p class="text-sm">Miếng sắt sẽ nguội đi từ nhiệt độ ban đầu của lò (t<sub>1</sub>) xuống nhiệt độ cân bằng (t).</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>tỏa</sub> = m<sub>sắt</sub> &middot; c<sub>sắt</sub> &middot; (t<sub>1</sub> - t) = 0.05 &middot; 460 &middot; (t<sub>1</sub> - 26) = 23 &middot; (t<sub>1</sub> - 26)</p>
+                        </li>
+                        <li><strong>Áp dụng "vũ khí" - Phương trình cân bằng nhiệt:</strong>
+                             <p class="text-sm">Nhiệt lượng tỏa ra phải bằng nhiệt lượng thu vào.</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>tỏa</sub> = Q<sub>thu (tổng)</sub></p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">23 &middot; (t<sub>1</sub> - 26) = 17970</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">t<sub>1</sub> - 26 = 17970 / 23 &asymp; 781.3</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">t<sub>1</sub> &asymp; 781.3 + 26 = 807.3 °C</p>
+                        </li>
+                        <li><strong>Kết luận vụ án:</strong>
+                            <p class="text-sm bg-green-100 p-3 rounded mt-2">Vậy, nhiệt độ của lò nung mà người thợ xác định được là khoảng <strong>807.3°C</strong>. Các thám tử đã làm rất tốt!</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+             <div class="p-4 bg-gray-50 border-t text-right">
+                <button onclick="closeModal('problem1Modal')" class="px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Đóng</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Problem 2 -->
+    <div id="problem2Modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-green-700">Bài toán ví dụ: Khám Phá "Sức Ăn" Của Nước</h3>
+                <button onclick="closeModal('problem2Modal')" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto modal-body">
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg">Đề bài:</h4>
+                    <p class="text-gray-700 mt-2">
+                        Để xác định nhiệt dung riêng của nước, người ta dùng bộ thí nghiệm. Lúc đầu nước trong bình có khối lượng 0,16 kg và ở nhiệt độ 25°C. Ở lần đo thứ nhất, sau khi đun 1 phút, nhiệt lượng kế cho biết nhiệt độ của nước trong bình là 26,3°C, oát kế cho biết công suất của nguồn là 14,6 W. (Bỏ qua sự hao phí nhiệt)
+                        <br>a. Độ tăng nhiệt độ của nước theo đơn vị kelvin là bao nhiêu?
+                        <br>b. Nhiệt dung riêng của nước đo được gần bằng giá trị nào?
+                    </p>
+                </div>
+                <hr class="my-4">
+                <button id="toggleSolutionBtn2" onclick="toggleSolution('solutionDiv2', 'toggleSolutionBtn2')" class="mb-4 w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Hiện đáp án</button>
+                <div id="solutionDiv2" class="hidden">
+                    <h4 class="font-bold text-lg">Phân tích và lời giải của Thầy Lâm:</h4>
+                    <ol class="list-decimal list-inside space-y-2 mt-2 text-gray-700">
+                        <li><strong>Tóm tắt các "manh mối":</strong>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Nước: m = 0.16kg, t<sub>đầu</sub> = 25°C, t<sub>sau</sub> = 26.3°C.</li>
+                                <li>Nguồn điện: P = 14.6 W, thời gian t = 1 phút = 60s.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Câu a: Tính độ tăng nhiệt độ (&Delta;t):</strong>
+                            <p class="text-sm">Độ tăng nhiệt độ là hiệu của nhiệt độ sau và nhiệt độ đầu.</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">&Delta;t = t<sub>sau</sub> - t<sub>đầu</sub> = 26.3 - 25 = 1.3 °C</p>
+                            <p class="mt-1 text-sm">Thầy lưu ý các em: độ chênh lệch nhiệt độ trong thang Celsius và Kelvin là như nhau. Vì vậy, &Delta;t = <strong>1.3 K</strong>.</p>
+                        </li>
+                        <li><strong>Câu b: Tìm "sức ăn" (nhiệt dung riêng c):</strong>
+                            <p class="text-sm">Đầu tiên, ta tính lượng năng lượng mà "đầu bếp" (nguồn điện) đã cung cấp.</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>cung cấp</sub> = P &middot; t = 14.6 &middot; 60 = 876 J</p>
+                             <p class="text-sm mt-2">Vì bỏ qua hao phí, toàn bộ năng lượng này được nước "ăn" hết để "lớn lên" (tăng nhiệt độ).</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>thu vào</sub> = m &middot; c &middot; &Delta;t</p>
+                             <p class="text-sm mt-2">Áp dụng phương trình: Q<sub>cung cấp</sub> = Q<sub>thu vào</sub></p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">876 = 0.16 &middot; c &middot; 1.3</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">c = 876 / (0.16 &middot; 1.3) = 876 / 0.208 &asymp; 4211.54 J/(kg.K)</p>
+                        </li>
+                        <li><strong>Kết luận:</strong>
+                            <p class="text-sm bg-green-100 p-3 rounded mt-2">Vậy, nhiệt dung riêng của nước mà chúng ta đo được là khoảng <strong>4211.54 J/(kg.K)</strong>, rất gần với giá trị chuẩn là 4200 J/(kg.K). Thí nghiệm thành công!</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+             <div class="p-4 bg-gray-50 border-t text-right">
+                <button onclick="closeModal('problem2Modal')" class="px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Problem 3 -->
+    <div id="problem3Modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-amber-700">Bài toán ví dụ: Chiếc Bình Nóng Lạnh</h3>
+                <button onclick="closeModal('problem3Modal')" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto modal-body">
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg">Đề bài:</h4>
+                    <p class="text-gray-700 mt-2">
+                        Một máy làm nóng nước có dung tích 15 lít và công suất tiêu thụ điện là 2500 W. Vào một ngày mùa đông, khi bật máy, nhiệt độ nguồn nước lạnh đưa vào là 15°C, khi nước đã làm nóng đến nhiệt độ tối đa là 70°C thì rơ-le của máy tự động ngắt. Biết nước có khối lượng riêng ρ = 1000 kg/m³, nhiệt dung riêng c = 4180 J/(kg.K). Bỏ qua sự truyền nhiệt ra môi trường.
+                        <br>Hãy phân tích các câu sau:
+                        <br>a) Độ tăng nhiệt độ của nước là 328 K.
+                        <br>b) Nhiệt lượng cần thiết cung cấp cho nước là 3.448.500 J.
+                        <br>c) Công của dòng điện cung cấp cho máy là 3.630.000 J.
+                        <br>d) Thời gian để làm nóng nước là 2 phút.
+                    </p>
+                </div>
+                <hr class="my-4">
+                <button id="toggleSolutionBtn3" onclick="toggleSolution('solutionDiv3', 'toggleSolutionBtn3')" class="mb-4 w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Hiện đáp án</button>
+                <div id="solutionDiv3" class="hidden">
+                    <h4 class="font-bold text-lg">Phân tích và lời giải của Thầy Lâm:</h4>
+                     <ol class="list-decimal list-inside space-y-2 mt-2 text-gray-700">
+                        <li><strong>Tóm tắt các "manh mối":</strong>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Dung tích: V = 15 lít = 0.015 m³.</li>
+                                <li>Công suất: P = 2500 W.</li>
+                                <li>Nhiệt độ đầu: t<sub>đầu</sub> = 15°C, Nhiệt độ cuối: t<sub>cuối</sub> = 70°C.</li>
+                                <li>Khối lượng riêng nước: ρ = 1000 kg/m³.</li>
+                                <li>Nhiệt dung riêng nước: c = 4180 J/(kg.K).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bước 1: Tìm khối lượng nước</strong>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">m = ρ &middot; V = 1000 &middot; 0.015 = 15 kg</p>
+                        </li>
+                        <li><strong>Phân tích câu a:</strong>
+                            <p class="text-sm">Độ tăng nhiệt độ Δt = t<sub>cuối</sub> - t<sub>đầu</sub> = 70 - 15 = 55°C = 55 K.</p>
+                            <p class="mt-1 text-sm bg-red-100 p-2 rounded">➜ Phát biểu a) sai. (328K là một lỗi tính toán sai khi cộng nhiệt độ Celsius với 273).</p>
+                        </li>
+                        <li><strong>Phân tích câu b:</strong>
+                            <p class="text-sm">Đây là nhiệt lượng có ích (Q<sub>thu</sub>) mà nước nhận được.</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>thu</sub> = m &middot; c &middot; Δt = 15 &middot; 4180 &middot; 55 = 3,448,500 J</p>
+                            <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Phát biểu b) đúng.</p>
+                        </li>
+                        <li><strong>Phân tích câu c:</strong>
+                             <p class="text-sm">Vì bỏ qua hao phí nhiệt, công của dòng điện (năng lượng toàn phần A) bằng nhiệt lượng nước thu vào.</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">A = Q<sub>thu</sub> = 3,448,500 J</p>
+                             <p class="mt-1 text-sm bg-red-100 p-2 rounded">➜ Phát biểu c) sai.</p>
+                        </li>
+                         <li><strong>Phân tích câu d:</strong>
+                            <p class="text-sm">Thời gian được tính từ năng lượng toàn phần (A).</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">A = P &middot; t ➜ t = A / P = 3,448,500 / 2500 = 1379.4 s</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">1379.4 giây &asymp; 23 phút</p>
+                             <p class="mt-1 text-sm bg-red-100 p-2 rounded">➜ Phát biểu d) sai.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+             <div class="p-4 bg-gray-50 border-t text-right">
+                <button onclick="closeModal('problem3Modal')" class="px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Problem 4 -->
+    <div id="problem4Modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-purple-700">Bài toán ví dụ: "Shipper" Nhiệt Lượng</h3>
+                <button onclick="closeModal('problem4Modal')" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto modal-body">
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg">Đề bài:</h4>
+                    <p class="text-gray-700 mt-2">
+                        Một hệ thống tản nhiệt cho CPU bằng chất lỏng có lưu lượng 0,4 lít/phút. Biết nhiệt dung riêng và khối lượng riêng của chất lỏng lần lượt là 4200 J/(kg.K) và 1000 kg/m³. Công suất tỏa nhiệt trung bình của CPU là 205 W. Bỏ qua sự hao phí nhiệt ra môi trường.
+                        <br>a. Nhiệt lượng CPU tỏa ra trong một giờ khi hoạt động là bao nhiêu?
+                        <br>b. Độ chênh lệch nhiệt độ của chất lỏng ở đầu vào và đầu ra bộ làm mát là bao nhiêu?
+                    </p>
+                </div>
+                <hr class="my-4">
+                <button id="toggleSolutionBtn4" onclick="toggleSolution('solutionDiv4', 'toggleSolutionBtn4')" class="mb-4 w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Hiện đáp án</button>
+                <div id="solutionDiv4" class="hidden">
+                    <h4 class="font-bold text-lg">Phân tích và lời giải của Thầy Lâm:</h4>
+                     <ol class="list-decimal list-inside space-y-2 mt-2 text-gray-700">
+                        <li><strong>Tóm tắt các "manh mối":</strong>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Lưu lượng: 0.4 lít/phút.</li>
+                                <li>Công suất CPU: P<sub>CPU</sub> = 205 W.</li>
+                                <li>Chất lỏng: c = 4200 J/(kg.K), ρ = 1000 kg/m³ = 1 kg/lít.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Câu a: Nhiệt lượng CPU tỏa ra trong 1 giờ</strong>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>CPU (1h)</sub> = P<sub>CPU</sub> &middot; t = 205 J/s &middot; 3600s = 738,000 J = 738 kJ</p>
+                            <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Trong một giờ, CPU tỏa ra một nhiệt lượng là 738 kJ.</p>
+                        </li>
+                        <li><strong>Câu b: Độ chênh lệch nhiệt độ (&Delta;t)</strong>
+                            <p class="text-sm">Vì bỏ qua hao phí, công suất mà chất lỏng thu vào bằng công suất CPU tỏa ra.</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">P<sub>thu</sub> = P<sub>CPU</sub> = 205 W (tức 205 J/s)</p>
+                            <p class="text-sm mt-2">Tiếp theo, ta tìm khối lượng chất lỏng chảy qua mỗi giây (m').</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">Lưu lượng (giây) = 0.4 lít / 60s</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">m' = (0.4 / 60) lít/s &middot; 1 kg/lít = 0.4 / 60 kg/s</p>
+                            <p class="text-sm mt-2">Áp dụng công thức cho dòng chảy liên tục: P<sub>thu</sub> = m' &middot; c &middot; &Delta;t</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">205 = (0.4 / 60) &middot; 4200 &middot; &Delta;t</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">205 = 28 &middot; &Delta;t</p>
+                             <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">&Delta;t = 205 / 28 &asymp; 7.32 °C (hoặc 7.32 K)</p>
+                             <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Độ chênh lệch nhiệt độ của chất lỏng là khoảng 7.32°C.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+             <div class="p-4 bg-gray-50 border-t text-right">
+                <button onclick="closeModal('problem4Modal')" class="px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Problem 5 -->
+    <div id="problem5Modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-yellow-700">Bài toán ví dụ: Năng lượng từ Mặt Trời</h3>
+                <button onclick="closeModal('problem5Modal')" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto modal-body">
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg">Đề bài:</h4>
+                    <p class="text-gray-700 mt-2">
+                        Máy nước nóng năng lượng Mặt Trời là thiết bị được sử dụng nguồn năng lượng trực tiếp từ ánh sáng Mặt Trời để làm nóng nước...
+                        <br>Hãy phân tích các phát biểu sau:
+                        <br><strong>a)</strong> Máy hoạt động dựa trên nguyên lí đối lưu nhiệt tự nhiên.
+                        <br><strong>b)</strong> Năng lượng ánh sáng được chuyển hóa thành điện năng để cung cấp cho các thiết bị điện làm nước trong bình chứa nóng lên.
+                        <br><strong>c)</strong> Bộ thu nhiệt của máy có diện tích 3,6 m² và công suất bức xạ trung bình của Mặt Trời 1000 W/m² và hiệu suất của máy là 20%. Để làm cho 12 kg nước (có nhiệt dung riêng 4200 J/kg.K) ở nhiệt độ 25°C tăng đến 75°C thì cần thời gian 58 phút 20 giây.
+                        <br><strong>d)</strong> So với dùng ấm điện có hiệu suất làm nóng 80% để đun 12 kg nước làm cho nhiệt độ tăng từ 25°C lên đến 75°C thì khi sử dụng máy nước nóng năng lượng Mặt Trời này tiết kiệm được 2450 đồng. Biết giá điện của điện lực quy định là 2800 đồng/kWh.
+                    </p>
+                </div>
+                <hr class="my-4">
+                <button id="toggleSolutionBtn5" onclick="toggleSolution('solutionDiv5', 'toggleSolutionBtn5')" class="mb-4 w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Hiện đáp án</button>
+                <div id="solutionDiv5" class="hidden">
+                    <h4 class="font-bold text-lg">Phân tích và lời giải của Thầy Lâm:</h4>
+                     <ol class="list-decimal list-inside space-y-3 mt-2 text-gray-700">
+                        <li class="p-2 bg-gray-50 rounded"><strong>Phân tích câu a:</strong>
+                           <p class="text-sm mt-1">Trong các ống thu nhiệt, nước được làm nóng, trở nên nhẹ hơn (giảm khối lượng riêng) và di chuyển lên trên vào bình bảo ôn. Nước lạnh hơn, nặng hơn từ bình sẽ chìm xuống, lấp đầy chỗ trống. Vòng tuần hoàn tự nhiên này chính là <strong>đối lưu</strong>.</p>
+                           <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Phát biểu a) đúng.</p>
+                        </li>
+                         <li class="p-2 bg-gray-50 rounded"><strong>Phân tích câu b:</strong>
+                           <p class="text-sm mt-1">Máy nước nóng năng lượng mặt trời chuyển hóa trực tiếp quang năng (năng lượng ánh sáng) thành <strong>nhiệt năng</strong> để làm nóng nước. Việc chuyển hóa quang năng thành điện năng là nguyên lý của pin mặt trời (photovoltaic).</p>
+                           <p class="mt-1 text-sm bg-red-100 p-2 rounded">➜ Phát biểu b) sai.</p>
+                        </li>
+                        <li class="p-2 bg-gray-50 rounded"><strong>Phân tích câu c:</strong>
+                           <p class="text-sm"><strong>Bước 1: Tính nhiệt lượng có ích để đun nước (Q<sub>thu</sub>):</strong> Đây là nhiệt lượng mà nước thực sự cần để nóng lên.</p>
+                           <p class="my-1 font-mono text-sm bg-gray-100 p-2 rounded">Δt = 75 - 25 = 50°C</p>
+                           <p class="my-1 font-mono text-sm bg-gray-100 p-2 rounded">Q<sub>thu</sub> = m &middot; c &middot; Δt = 12 &middot; 4200 &middot; 50 = 2,520,000 J</p>
+                           <p class="text-sm"><strong>Bước 2: Tính thời gian cần thiết:</strong></p>
+                           <p class="text-sm">Công suất bức xạ toàn phần máy nhận được: P<sub>toàn phần</sub> = P<sub>bức xạ/m²</sub> &middot; S = 1000 &middot; 3.6 = 3600 W.</p>
+                           <p class="text-sm">Công suất có ích thực tế máy tạo ra: P<sub>có ích</sub> = P<sub>toàn phần</sub> &middot; H<sub>mặt trời</sub> = 3600 &middot; 0.2 = 720 W (tức 720 J/s).</p>
+                           <p class="text-sm">Thời gian cần thiết: t = Q<sub>thu</sub> / P<sub>có ích</sub> = 2,520,000 / 720 = 3500 s.</p>
+                           <p class="text-sm">Đổi ra phút: 3500s / 60 = 58.333... phút &asymp; 58 phút 20 giây.</p>
+                           <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Phát biểu c) đúng.</p>
+                        </li>
+                         <li class="p-2 bg-gray-50 rounded"><strong>Phân tích câu d:</strong>
+                            <p class="text-sm"><strong>Bước 1: Tính năng lượng điện mà ấm điện cần tiêu thụ (A<sub>điện</sub>):</strong></p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">A<sub>điện</sub> = Q<sub>thu</sub> / H<sub>ấm</sub> = 2,520,000 / 0.8 = 3,150,000 J</p>
+                             <p class="text-sm"><strong>Bước 2: Đổi năng lượng điện ra kWh và tính tiền:</strong> (Lưu ý: 1 kWh = 3,600,000 J)</p>
+                            <p class="mt-1 font-mono text-sm bg-gray-100 p-2 rounded">A<sub>điện</sub> (kWh) = 3,150,000 / 3,600,000 = 0.875 kWh</p>
+                             <p class="text-sm">Chi phí dùng ấm điện: Tiền = 0.875 kWh &middot; 2800 đ/kWh = 2450 đồng.</p>
+                             <p class="text-sm">Vì máy năng lượng mặt trời dùng năng lượng miễn phí, nên số tiền tiết kiệm được chính là chi phí khi dùng ấm điện.</p>
+                             <p class="mt-1 text-sm bg-green-100 p-2 rounded">➜ Phát biểu d) đúng.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+             <div class="p-4 bg-gray-50 border-t text-right">
+                <button onclick="closeModal('problem5Modal')" class="px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = ""; // QUAN TRỌNG: Dán API Key của em vào đây nhé.
+
+        // --- MODAL LOGIC ---
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            // Reset solution state when closing modal
+            const solutionDiv = document.querySelector(`#${modalId} div[id^="solutionDiv"]`);
+            const toggleBtn = document.querySelector(`#${modalId} button[id^="toggleSolutionBtn"]`);
+
+            if (solutionDiv && toggleBtn) {
+                solutionDiv.classList.add('hidden');
+                toggleBtn.textContent = 'Hiện đáp án';
+                toggleBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+                toggleBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            }
+        }
+
+        // --- TOGGLE SOLUTION LOGIC ---
+        function toggleSolution(solutionId, btnId) {
+            const solutionDiv = document.getElementById(solutionId);
+            const toggleBtn = document.getElementById(btnId);
+            const isHidden = solutionDiv.classList.contains('hidden');
+            
+            if (isHidden) {
+                solutionDiv.classList.remove('hidden');
+                toggleBtn.textContent = 'Ẩn đáp án';
+                toggleBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+                toggleBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+            } else {
+                solutionDiv.classList.add('hidden');
+                toggleBtn.textContent = 'Hiện đáp án';
+                toggleBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+                toggleBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            }
+        }
+
+        // --- GEMINI AI INTERACTION ---
+        async function askAI() {
+            const promptText = document.getElementById(`ai-prompt-1`).value;
+            const responseDiv = document.getElementById(`ai-response-1`);
+            const button = document.querySelector(`#ai-interaction-1 button`);
+            const buttonText = document.getElementById(`ai-btn-text-1`);
+            const loader = document.getElementById(`ai-loader-1`);
+
+            if (!promptText.trim()) {
+                responseDiv.innerHTML = 'Các em hãy nhập câu hỏi vào nhé!';
+                responseDiv.classList.remove('hidden');
+                return;
+            }
+            if (!apiKey) {
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                if (appId === 'default-app-id') {
+                    responseDiv.innerHTML = `Xin lỗi các em, chức năng này cần có API Key của Google AI. Thầy Lâm chưa kịp cấu hình rồi. Các em có thể hỏi trực tiếp thầy qua các kênh khác nhé!`;
+                    responseDiv.classList.remove('hidden');
+                    return;
+                }
+            }
+
+            buttonText.textContent = 'Đang suy nghĩ...';
+            loader.classList.remove('hidden');
+            button.disabled = true;
+
+            const personaPrompt = `Bạn là Thầy Lâm, một giáo viên vật lý gần gũi và sâu sắc. Bạn CHỈ được trả lời các câu hỏi liên quan chặt chẽ đến chủ đề của bài giảng là nhiệt lượng, cân bằng nhiệt, sự chuyển thể. Nếu người dùng hỏi về các chủ đề không liên quan (ví dụ: toán, lịch sử, phim ảnh...), bạn BẮT BUỘC phải từ chối một cách khéo léo và hài hước theo đúng văn phong của Thầy Lâm. Câu trả lời phải ngắn gọn, dễ hiểu, sử dụng các phép so sánh gần gũi. Câu hỏi của học sinh là: "${promptText}"`;
+            
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: personaPrompt }] });
+            const payload = { contents: chatHistory };
+            const effectiveApiKey = apiKey || ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${effectiveApiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    throw new Error(`API error: ${response.status} ${response.statusText} - ${errorBody}`);
+                }
+                
+                const result = await response.json();
+                
+                let aiText = "Thầy xin lỗi, có vẻ như có lỗi xảy ra khi thầy đang suy nghĩ. Các em thử lại nhé.";
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts.length > 0) {
+                     aiText = result.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/\n/g, '<br>');
+                } else if (result.error) {
+                    aiText = `Thầy xin lỗi, có lỗi từ hệ thống AI: ${result.error.message}`;
+                }
+                responseDiv.innerHTML = `${aiText}<br><br><em class="text-sm text-gray-500">--- Được giải đáp bởi Trợ lý AI của Thầy Lâm.</em>`;
+            } catch (error) {
+                console.error('Error fetching AI response:', error);
+                responseDiv.innerHTML = 'Thầy xin lỗi, đã có lỗi xảy ra. Các em vui lòng thử lại sau nhé. Lỗi: ' + error.message;
+            } finally {
+                responseDiv.classList.remove('hidden');
+                buttonText.textContent = 'Gửi câu hỏi';
+                loader.classList.add('hidden');
+                button.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
